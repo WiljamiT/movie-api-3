@@ -1,0 +1,8 @@
+.grid-movies {
+    border: 1px solid green;
+    display: grid;
+    grid-template-columns: repeat(6, 270px);
+    grid-template-rows: repeat(6, auto);
+    
+    margin: 0 auto;
+}
