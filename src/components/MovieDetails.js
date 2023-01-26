@@ -9,7 +9,7 @@ const MovieDetails = () => {
     const [ movies, setMovies ] = useState([]);
 
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=marvel').then(response => {
+        axios.get("https://api.themoviedb.org/3/search/movie?api_key=API_KEY_XXXXXXXX&query=marvel").then(response => {
             console.log(response.data.results)
             setMovies(response.data.results)
         }).catch(error => {
