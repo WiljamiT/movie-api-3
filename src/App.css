@@ -1,5 +1,4 @@
-.grid {
-  border: 1px solid red;
+/* .movies-marvel, .movies-nowplaying {
   background: grey;
   display: flex;
   flex-direction: row;
@@ -44,4 +43,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

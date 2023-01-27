@@ -1,21 +1,22 @@
 import React from 'react'
+
+import { Route, Routes } from 'react-router-dom';
+
 import MovieDetails from './components/MovieDetails'
 
 import './App.css'
-import Collection from './components/Collection'
-import HeroBanner from './components/HeroBanner'
+import Navbar from './components/Navbar'
+import NowPlaying from './components/NowPlaying'
 
 const App = () => {
   return (
-    <>
-      <div>App</div>
-      <HeroBanner />
-      <Collection />
-      <div className="grid">
-        <MovieDetails />
-      </div>
-      
-    </>
+    <div>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={ <NowPlaying />} />
+          <Route path="/marvel" element={ <MovieDetails /> } />
+        </Routes>  
+    </div>
   )
 }
 

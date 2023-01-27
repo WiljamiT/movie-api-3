@@ -8,27 +8,27 @@ const Collection = () => {
   return (
     <div className="dynamic-collection">
         <div className="card-link">
-            <img className="card-link-img" src={Disney} alt="disney" />
+            <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
         </div>
 
         <div className="card-link">
-            <img className="card-link-img" src={Disney} alt="disney" />
+        <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
         </div>
 
         <div className="card-link">
-            <img className="card-link-img" src={Disney} alt="disney" />
+        <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
         </div>
 
         <div className="card-link">
-            <img className="card-link-img" src={Disney} alt="disney" />
+        <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
         </div>
 
         <div className="card-link">
-            <img className="card-link-img" src={Disney} alt="disney" />
+        <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
         </div>
 
         <div className="card-link">
-            <img className="card-link-img" src={Disney} alt="disney" />
+        <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
         </div>
     </div>
   )
