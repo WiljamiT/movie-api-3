@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useApiRequest from "./Fetch";
 
 import './NowPlaying.css'
@@ -6,10 +6,11 @@ import './NowPlaying.css'
 import Collection from '../components/Collection'
 import HeroBanner from '../components/HeroBanner'
 
-
 const NowPlaying = () => {
+  const [page, setPage] = useState(1);
+
   const { data, error, isLoaded } = useApiRequest(
-    "https://api.themoviedb.org/3/movie/now_playing?api_key=4d9f60fc73fd30aad1b7e44da04b9806"
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=4d9f60fc73fd30aad1b7e44da04b9806&page=${page}`
   );
 
   const baseUrl = "http://image.tmdb.org/t/p/w500";
@@ -21,22 +22,49 @@ const NowPlaying = () => {
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
-  // console.log(data.dates)
+  console.log(data.results)
 
   return (
     <>
       <HeroBanner />
       <Collection />
-      <div className="grid-movies-np ">
+      <div className="movie-text-infos">
         <h4><b>NOW PLAYING</b></h4>
         <h5>{`${data.dates.minimum} / ${data.dates.maximum}`}</h5>
-        {data.results.map((item, i) => (
-          <div className="movie-card-details" key={i}>
-          <h4>{item.original_title}</h4>
-          <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} style={{ width: "50px", height: "50px"}}/>
       </div>
+
+      <div className="grid-movies-np">
+        {data.results.map((item, i) => (
+          <a key={i} className="jee" href={`movies/${item.id}`}> 
+          <div className="movie-card-details">
+          
+            
+          <h5>{item.original_title}</h5>
+          <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
+            </div>
+          </a>
+
+      
         ))}
       </div>
+
+
+      <div className="pagination">
+        <button
+            disabled={page === 1}
+            onClick={() => setPage((prevState) => prevState - 1, window.scrollTo({top: 460}))}
+        >
+            Prev
+        </button>
+            <p>{page} / {data.total_pages}</p>
+            <button disabled={page === data.total_pages} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 460})) }>
+              Next
+        </button>
+
+        
+       </div> 
+
+
     </>
   );
 };

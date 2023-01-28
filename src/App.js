@@ -7,6 +7,8 @@ import MovieDetails from './components/MovieDetails'
 import './App.css'
 import Navbar from './components/Navbar'
 import NowPlaying from './components/NowPlaying'
+import DetailsPage from './components/DetailsPage';
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={ <NowPlaying />} />
           <Route path="/marvel" element={ <MovieDetails /> } />
+          <Route path="movies/:movieId" element={ <DetailsPage />} />
         </Routes>  
     </div>
   )
