@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './MovieDetails.css'
+// import './MovieDetails.css'
 
 import useApiRequest from "./Fetch";
 

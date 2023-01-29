@@ -1,0 +1,93 @@
+.dynamic-collection {
+    height: 230px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #131520;
+}
+
+/* .card-link {
+    border: 1px solid black;
+    width: 170px;
+    height: 170px;
+    padding: 0px;
+}
+
+.card-link :hover {
+    cursor: pointer;
+    background: url(../../assets/disney-bg.jpg);
+    background-size: cover;
+}
+
+.card-link-img {
+    width: 160px;
+    height: 160px;
+    border: 1px solid red;
+    padding: 5px;
+} */
+
+.card-link-disney:hover {
+    background: url(../../assets/disney-bg.jpg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center center;
+
+}
+
+.card-link-marvel:hover {
+    background: url(../../assets/marvel-bg.jpg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center center;
+}
+
+.card-link-pixar:hover {
+    background: url(../../assets/pixar-bg.jpeg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center center;
+}
+
+.card-link-sw:hover {
+    background: url(../../assets/sw-bg.jpg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center center;
+
+}
+
+.card-link-nf:hover {
+    background: url(../../assets/nf-bg.jpg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center center;
+}
+
+.card-link-ng:hover {
+    background: url(../../assets/ng-bg.jpg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center center;
+}
+
+.card-link-disney, 
+.card-link-marvel, 
+.card-link-pixar,
+.card-link-sw,
+.card-link-nf,
+.card-link-ng {
+    border: 2px solid #f0f2f5;
+    border-radius: 7px;
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255,255,255,0.6);
+}
+
+.card-link-img {
+    width: 180px;
+}
