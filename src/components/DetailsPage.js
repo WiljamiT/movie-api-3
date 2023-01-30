@@ -57,6 +57,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import useApiRequest from "./Fetch";
 
+import "../components/styles/DetailsPage.css"
+
 
 const DetailsPage = () => {
     const { movieId } = useParams();
@@ -66,15 +68,50 @@ const DetailsPage = () => {
         `https://api.themoviedb.org/3/movie/${movieId}?api_key=4d9f60fc73fd30aad1b7e44da04b9806`
     );
 
-    console.log(movieId)
-    console.log(data.title)
+    const posterUrl = "http://image.tmdb.org/t/p/w500"
+    // console.log(movieId)
+    // console.log(data.title)
+    // console.log(data)
+
+    console.log(posterUrl + data.backdrop_path);
     console.log(data)
 
     
   return (
-    <div>
-        <p>ID {data.id} NAME {data.title}</p>
-        <img src={`http://image.tmdb.org/t/p/w500/${data.backdrop_path}`} alt="asd" />
+    <div className="details-container">
+      <div className="poster-image">
+        <img src={posterUrl + data.poster_path} alt="asd" />
+      </div>
+
+      <div className="backdrop-infos">
+        <img src={posterUrl + data.backdrop_path} alt="asd" />
+            
+          <h1>{data.title}</h1>
+          <h2>{data.tagline}</h2>
+          <h3>{data.vote_average}</h3>
+            
+        <p>{data.overview}</p>
+
+        <br />
+        <p>Check trailer (Youtube): <a href={`https://www.youtube.com/results?search_query=${data.title}`}>Link</a></p>
+        <p>Or open here: </p>
+      </div>
+              
+
+              
+
+
+
+
+
+
+
+
+
+
+              
+            
+    
     </div>
   )
 }

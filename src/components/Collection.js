@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import '../components/styles/Collection.css';
 
@@ -10,30 +10,31 @@ import Netflix from '../assets/netflix-3.svg'
 import Svg6 from '../assets/national-geographic.svg'
 
 const Collection = () => {
+
   return (
     <div className="dynamic-collection">
         <div className="card-link-disney">
-            <a href="marvel"><img className="card-link-img" src={Disney} alt="disney" /></a>
+            <a href="disney"><img className="card-link-img" src={Disney} alt="Disney" /></a>
         </div>
 
         <div className="card-link-marvel">
-        <a href="marvel"><img className="card-link-img" src={Marvel} alt="disney" /></a>
+        <a href="marvel"><img className="card-link-img" src={Marvel} alt="Marvel" /></a>
         </div>
 
         <div className="card-link-pixar">
-        <a href="marvel"><img className="card-link-img" src={Pixar} alt="disney" /></a>
+        <a href="pixar"><img className="card-link-img" src={Pixar} alt="Pixar" /></a>
         </div>
 
         <div className="card-link-sw">
-        <a href="marvel"><img className="card-link-img" src={SW} alt="disney" /></a>
+        <a href="star-wars"><img className="card-link-img" src={SW} alt="SW" /></a>
         </div>
 
         <div className="card-link-nf">
-        <a href="marvel"><img className="card-link-img" src={Netflix} alt="disney" /></a>
+        <a href="netflix"><img className="card-link-img" src={Netflix} alt="Netflix" /></a>
         </div>
 
         <div className="card-link-ng">
-        <a href="marvel"><img className="card-link-img" src={Svg6} alt="disney" /></a>
+        <a href="national-geographic"><img className="card-link-img" src={Svg6} alt="National Geographic" /></a>
         </div>
     </div>
   )

@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 // import './MovieDetails.css'
-
 import useApiRequest from "./Fetch";
 
-const MovieDetails = () => {
+const MovieDetails = ({company}) => {
 
     const [page, setPage] = useState(1);
 
-
     const { data, error, isLoaded } = useApiRequest(
-        `https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=marvel&page=${page}`
+        `https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=${company}&page=${page}`
       );
+      console.log(company)
     const baseUrl = "http://image.tmdb.org/t/p/w500";
     const errorUrl = "https://via.placeholder.com/150";
 

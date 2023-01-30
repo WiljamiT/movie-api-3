@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdArrowBack, MdArrowForward } from "react-icons/md"
 import useApiRequest from "./Fetch";
 
 import '../components/styles/NowPlaying.css'
@@ -48,15 +49,15 @@ const UpcomingMovies = () => {
             disabled={page === 1}
             onClick={() => setPage((prevState) => prevState - 1, window.scrollTo({top: 460}))}
         >
-            Prev
+            <MdArrowBack />
         </button>
-            <p>{page} / {data.total_pages}</p>
-            <button disabled={page === data.total_pages} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 1750})) }>
-              Next
-        </button>
+            <p>{page} / {!data.total_pages ? 1 : data.total_pages}</p>
+            <button disabled={page === data.total_pages || data.total_pages === 1} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 10})) }>
+              <MdArrowForward />
+            </button>
 
         
-       </div> 
+       </div>
 
 
     </>

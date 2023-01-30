@@ -1,0 +1,42 @@
+.details-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 1010px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    color: #fff;
+
+    text-align: center;
+
+    border: 1px solid #131520;
+    background: #131520;
+    border-radius: 5px;
+}
+
+img {
+    border-radius: 5px;
+}
+
+p {
+    text-align: left;
+}
+
+
+
+span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.poster-image {
+    width: 500px;
+    padding: 5px;
+}
+
+.backdrop-infos {
+    width: 500px;
+    padding: 5px;
+}
