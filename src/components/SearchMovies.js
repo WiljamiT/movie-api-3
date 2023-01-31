@@ -1,62 +1,57 @@
 // import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { MdArrowBack, MdArrowForward } from "react-icons/md"
 import useApiRequest from "./Fetch";
 import '../components/styles/SearchMovies.css';
 
 const SearchMovies = () => {
-    // const [movies, setMovies] = useState("");
+
+    const inputRef = useRef(null);
+
+    // const [updated, setUpdated] = useState('');
+
+    const handleClick = () => {
+      // 👇 "inputRef.current.value" is input value
+      setMovieName(inputRef.current.value);
+    };
 
     const [movieName, setMovieName] = useState("");
 
-    
-
-    
-
     const [page, setPage] = useState(1);
-    // `https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=${movieName}&page=${page}`
-    // const getMovies = () => {
-        
-    //     axios
-    //         .get(`https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=${movieName}&page=${page}`).then(response => {
-    //             console.log("VASTAUS APISTA", response.data)
-    //             setMovies(response.data)
-    //             console.log(page)
-    //         })
-    //     console.log("INPUTISTA", movieName)
-    //   }
 
-    //   const baseUrl = "http://image.tmdb.org/t/p/w500";
-    //   const errorUrl = "https://via.placeholder.com/150";
+    
+    
 
     const { data, error, isLoaded } = useApiRequest(
         `https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=${movieName}&page=${page}`
       );
+
+  //     if (error !== null) {
+  //   return <div>Error: {error.message}</div>;
+  // }
+  // if (!isLoaded) {
+  //   return <div>Loading...</div>;
+  // }
     
       const baseUrl = "http://image.tmdb.org/t/p/w500";
       const errorUrl = "https://via.placeholder.com/250";
 
-    // const getMovies = () => {
-    //     setMovies(data);
-    //     console.log("ASDASDSAD")
-    // }
-      
-
   return (
     <>
         <div className="search-container">
-
-            <input placeholder="Search movie by name... " className="movies-input" onChange={(e) => setTimeout(() => {
+            
+            {/* <input placeholder="Search movie by name... " className="movies-input" onChange={(e) => setTimeout(() => {
                 setMovieName(e.target.value)
-            }, 1000) } />
+            }, 1000) } /> */}
 
-            {/* <button onClick={() => getMovies()}>Search</button> */}
+            <input ref={inputRef} placeholder="Search movie by name... " className="movies-input" type="text" id="message" name="message" />
+            <button onClick={handleClick}>Update</button>
             
         </div>
         <div className="results-container">
             <h4>{data ? `Found movies: ${data.total_results ? data.total_results : 0}` : `Type to input and search for specific movie e.g. Thor`}</h4>
         </div>
-        {!data.results ? <div className="grid-movies-np">asd</div> : <div className="grid-movies-np">
+        {!data.results ? <div className="search-notfound"><h1>🔎</h1><h1>🎬</h1><h1>🍿</h1></div> : <div className="grid-movies-np">
         {data.results.map((item, i) => (
           <a key={i} className="jee" href={`movies/${item.id}`}> 
             <div className="movie-card-details">
@@ -77,7 +72,7 @@ const SearchMovies = () => {
             <MdArrowBack />
         </button>
             <p>{page} / {!data.total_pages ? 1 : data.total_pages}</p>
-            <button disabled={page === data.total_pages || data.total_pages === 1} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 10})) }>
+            <button disabled={page === data.total_pages} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 10})) }>
               <MdArrowForward />
             </button>
 

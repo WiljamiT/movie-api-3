@@ -33,11 +33,34 @@ body {
     grid-gap: 20px;
     align-items: center;
     justify-content: center;
-    z-index: 2;
     background-color: #131520;
     padding: 50px 0px 50px 0px;
     min-height: 50vh;
 }
+
+.search-notfound {
+    width: 300px;
+    height: 70vh;
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 30px;
+
+}
+
+.search-notfound h1 {
+    margin: 5px;
+    height: 70px;
+    padding-bottom: 10px;
+    width: 90px;
+    background: #131520;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
 
 .movie-text-infos {
     display: flex;

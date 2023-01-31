@@ -40,3 +40,45 @@ span:hover {
     width: 500px;
     padding: 5px;
 }
+
+.recoms-container {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    color: #fff;
+
+}
+
+.recoms-container img {
+    width: 200px;
+    height: 280px;
+}
+
+.recoms h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.recoms-card {
+    border-radius: 7px;
+    background: #131520;
+    width: 200px;
+    height: 320px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.recoms-card:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #fff;
+}
+
+.recoms-card p {
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
