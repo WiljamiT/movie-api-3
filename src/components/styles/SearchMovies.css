@@ -30,10 +30,9 @@ body {
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(3, auto);
-    grid-gap: 20px;
+    grid-gap: 0px;
     align-items: center;
     justify-content: center;
-    background-color: #131520;
     padding: 50px 0px 50px 0px;
     min-height: 50vh;
 }
@@ -72,4 +71,110 @@ body {
 
     background-color: #131520;
     color: #fff;
+}
+
+.movie-text-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 170px;
+
+    background-color: #131520;
+    color: #fff;
+}
+
+.movie-text-infos h1{
+    font-size: 6rem;
+    text-transform: capitalize;
+}
+
+
+
+.infos {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+
+.movie-card-details {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 450px;
+    padding: 2px;
+    background: #191919;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px black;
+    margin: 15px 15px 15px 15px;
+}
+
+
+
+.jee:hover {
+    transform: scale(1.02);
+    text-decoration: underline;
+    color: #fff;
+    border-radius: 7px;
+    box-shadow: 1px 1px 10px gray;
+}
+
+.movie-card-details h4 {
+    color: white;
+    padding: 0;
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+}
+
+.movie-card-details img {
+    max-width: 100%;
+    height: 380px;
+    max-height: 380px;
+    border-radius: 7px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background: #131520;
+    font-size: 16px;
+    color: #fff;
+}
+
+.pagination button {
+    margin: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    background: #1976d2;
+    text-shadow: 1px 1px 1px #131520;
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination button:disabled {
+    background: #4a9bec;
+    color: gray;
 }

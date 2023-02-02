@@ -1,4 +1,4 @@
-.movie-text-infos {
+/* .movie-text-infos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,8 +10,9 @@
     color: #fff;
 }
 
-.movie-text-infos {
-    
+.movie-text-infos h1{
+    font-size: 6rem;
+    text-transform: capitalize;
 }
 
 .grid-movies-np {
@@ -27,6 +28,7 @@
 }
 
 .infos {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,6 +38,7 @@
 
 
 .movie-card-details {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +66,7 @@
     padding: 0;
     margin: auto;
     text-decoration: none;
+    text-align: center;
 }
 
 .movie-card-details img {
@@ -107,4 +111,4 @@ a {
 .pagination button:disabled {
     background: #4a9bec;
     color: gray;
-}
+} */
