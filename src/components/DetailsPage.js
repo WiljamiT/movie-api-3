@@ -31,8 +31,8 @@ const RecommendationRow = () => {
       <div className="recoms-container">
         {data.total_pages === 0 ? <p>- No recommendations -</p> : data.results.map((item, i) => (
           <div className="recoms-card" key={i}>
-            <img src={posterUrl + item.poster_path} alt={item.title} />
-            <a href={`/movies/${item.id}`}><p>{item.title}</p></a>
+            
+            <a href={`/movies/${item.id}`}><img src={posterUrl + item.poster_path} alt={item.title} /><p>{item.title}</p></a>
           </div>
         ))}
         
@@ -47,9 +47,11 @@ const DetailsPage = () => {
 
     const { movieId } = useParams();
 
+    const apiKey = process.env.REACT_APP_MOVIE_API_KEY
+
 
     const { data, error, isLoaded } = useApiRequest(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=4d9f60fc73fd30aad1b7e44da04b9806`
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
     );
 
     if (error !== null) {
@@ -79,7 +81,7 @@ const DetailsPage = () => {
               
             <h1>{data.title}</h1>
             <h2>{data.tagline}</h2>
-            <h3>{data.vote_average}</h3>
+            <h3>{data.vote_average.toFixed(1)} / 10</h3>
               
           <p>{data.overview}</p>
 

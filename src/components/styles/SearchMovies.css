@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    
 }
 
 .search-container {
@@ -9,14 +10,45 @@ body {
     justify-content: center;
 }
 
+.input-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 45px;
+
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .movies-input {
     border: none;
     width: 250px;
     height: 30px;
     border-radius: 3px;
     padding: 5px;
-    margin-top: 30px;
 }
+
+.movies-input-btn {
+    height: 40px;
+    width: 80px;
+    
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+
+    background: #1976d2;
+    color: white;
+    font-weight: 700;
+}
+
+.movies-input-btn:hover {
+    cursor: pointer;
+    
+}
+
+
 
 .results-container {
     color: #fff;
@@ -45,7 +77,6 @@ body {
     justify-content: center;
     margin: 0 auto;
     font-size: 30px;
-
 }
 
 .search-notfound h1 {

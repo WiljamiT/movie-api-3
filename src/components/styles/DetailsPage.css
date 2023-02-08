@@ -83,7 +83,7 @@ span:hover {
 
 .recoms-card p {
     position: relative;
-    bottom: 10px;
+    top: 5px;
     text-align: center;
     color: #fff;
 }

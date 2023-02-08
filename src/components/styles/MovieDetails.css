@@ -1,11 +1,11 @@
-/* .grid-movies {
-    
-    display: grid;
-    grid-template-columns: repeat(6, 270px);
-    grid-template-rows: repeat(6, auto);
-    
-    margin: 0 auto;
-} */
+.movie-card-details {
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-
-  
+.movie-card-details:hover {
+    box-shadow: 1px 1px 4px white;
+}

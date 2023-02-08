@@ -9,9 +9,10 @@ import UpcomingMovies from "./UpcomingMovies";
 
 const NowPlaying = () => {
   const [page, setPage] = useState(1);
+  const apiKey = process.env.REACT_APP_MOVIE_API_KEY
 
   const { data, error, isLoaded } = useApiRequest(
-    `https://api.themoviedb.org/3/movie/now_playing?api_key=4d9f60fc73fd30aad1b7e44da04b9806&page=${page}&region=fi`
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}&region=fi`
   );
 
   const baseUrl = "http://image.tmdb.org/t/p/w500";
@@ -32,7 +33,7 @@ const NowPlaying = () => {
       <Collection />
       <div className="movie-text-infos">
         <h2><b>NOW PLAYING | FIN</b></h2>
-        <h5>{`${data.dates.minimum} / ${data.dates.maximum}`}</h5>
+        <h4>{`${data.dates.minimum} / ${data.dates.maximum}`}</h4>
       </div>
 
       <div className="grid-movies-np">

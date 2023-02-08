@@ -57,14 +57,7 @@ const Footer = () => {
               <li class="menu-item menu-item-type-post_type menu-item-object-page">
                 <a href="#">Text</a>
               </li>
-              <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="#">Text</a>
-              </li>
-              <li class="menu-item menu-item-type-post_type_archive menu-item-object-customer">
-                <a href="#">Text</a></li>
-              <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="#">Text</a>
-              </li>
+              
             </ul>
           </div>
         </div>
@@ -76,7 +69,7 @@ const Footer = () => {
           </div>
           <div class="footer-call-to-action">
             <h2 class="footer-call-to-action-title">Call Us</h2>
-            <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:0124-64XXXX" target="_self"> 040 123 1234 </a></p>
+            <i class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:0124-64XXXX" target="_self"> 040 123 1234 </a></i>
           </div>
         </div>
         <div class="footer-social-links"> <svg class="footer-social-amoeba-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 54">

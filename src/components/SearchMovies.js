@@ -7,23 +7,33 @@ import '../components/styles/SearchMovies.css';
 const SearchMovies = () => {
 
     const inputRef = useRef(null);
+    
 
     // const [updated, setUpdated] = useState('');
+
+    const handleKeyUp = (e) => {
+      if(e.key === "Enter") {
+        setMovieName(inputRef.current.value);
+      }
+    }
 
     const handleClick = () => {
       // 👇 "inputRef.current.value" is input value
       setMovieName(inputRef.current.value);
     };
 
+    
+  
+
     const [movieName, setMovieName] = useState("");
 
     const [page, setPage] = useState(1);
 
-    
+    const apiKey = process.env.REACT_APP_MOVIE_API_KEY
     
 
     const { data, error, isLoaded } = useApiRequest(
-        `https://api.themoviedb.org/3/search/movie?api_key=4d9f60fc73fd30aad1b7e44da04b9806&query=${movieName}&page=${page}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieName}&page=${page}`
       );
 
   //     if (error !== null) {
@@ -43,10 +53,10 @@ const SearchMovies = () => {
             {/* <input placeholder="Search movie by name... " className="movies-input" onChange={(e) => setTimeout(() => {
                 setMovieName(e.target.value)
             }, 1000) } /> */}
-
-            <input ref={inputRef} placeholder="Search movie by name... " className="movies-input" type="text" id="message" name="message" />
-            <button onClick={handleClick}>Update</button>
-            
+          <div className="input-container">
+            <input ref={inputRef} onKeyUp={handleKeyUp} placeholder="Search movie by name... " className="movies-input" type="text" id="message" name="message" />
+            <button onClick={handleClick} className="movies-input-btn">Search</button>
+          </div>  
         </div>
         <div className="results-container">
             <h4>{data ? `Found movies: ${data.total_results ? data.total_results : 0}` : `Type to input and search for specific movie e.g. Thor`}</h4>
