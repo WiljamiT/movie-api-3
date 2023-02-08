@@ -75,7 +75,7 @@ const Footer = () => {
             <a class="footer-call-to-action-button button" href="#" target="_self">Text</a>
           </div>
           <div class="footer-call-to-action">
-            <h2 class="footer-call-to-action-title"> You Call Us</h2>
+            <h2 class="footer-call-to-action-title">Call Us</h2>
             <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:0124-64XXXX" target="_self"> 040 123 1234 </a></p>
           </div>
         </div>

@@ -13,7 +13,7 @@
   
   
   .footer {
-      background-color: #131520ee;
+      background-color: #1f212b;
       color: #fff;
   }
   .footer-wave-svg {
@@ -29,11 +29,12 @@
   }
   
   .footer-content {
-      margin-left: auto;
+      /* margin-left: auto;
       margin-right: auto;
       max-width: 1230px;
       padding: 40px 15px 450px;
-      position: relative;
+      position: relative; */
+     
   }
   
   .footer-content-column {
@@ -42,6 +43,11 @@
       padding-left: 15px;
       padding-right: 15px;
       width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   
       color: #fff;
   }
   
@@ -81,6 +87,7 @@
       color: #fffff2;
       margin-top: 10px;
       margin-bottom: 20px;
+      text-align: center;
   }
   .footer-call-to-action-button:hover {
       background-color: #fffff2;
@@ -108,6 +115,7 @@
   }
   .footer-call-to-action {
       margin-top: 30px;
+      text-align: center;
   }
   .footer-call-to-action-title {
       color: #fffff2;

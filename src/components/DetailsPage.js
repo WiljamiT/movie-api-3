@@ -9,8 +9,10 @@ const RecommendationRow = () => {
 
   const posterUrl = "http://image.tmdb.org/t/p/w500"
 
+  const apiKey = process.env.REACT_APP_MOVIE_API_KEY
+
   const { data, error, isLoaded } = useApiRequest(
-      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=4d9f60fc73fd30aad1b7e44da04b9806`
+      `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}`
   );    
 
   if (error !== null) {
@@ -29,7 +31,8 @@ const RecommendationRow = () => {
       <div className="recoms-container">
         {data.total_pages === 0 ? <p>- No recommendations -</p> : data.results.map((item, i) => (
           <div className="recoms-card" key={i}>
-            <a href={`/movies/${item.id}`}><img src={posterUrl + item.poster_path} alt={item.title} /><p>{item.title}</p></a>
+            <img src={posterUrl + item.poster_path} alt={item.title} />
+            <a href={`/movies/${item.id}`}><p>{item.title}</p></a>
           </div>
         ))}
         
@@ -81,7 +84,7 @@ const DetailsPage = () => {
           <p>{data.overview}</p>
 
           <br />
-          <p>Check trailer (Youtube): <a href={`https://www.youtube.com/results?search_query=${data.title}`}>Link</a></p>
+          <p>Check trailer (Youtube): <a href={`https://www.youtube.com/results?search_query=${data.title}`} style={{ color: "cyan"}}>Link</a></p>
           <p>Or open here: </p>
         </div>
       </div>

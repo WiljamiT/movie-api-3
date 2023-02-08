@@ -21,14 +21,12 @@ const App = () => {
       <Navbar />
         <Routes>
           <Route path="/" element={ <NowPlaying />} />
-
           <Route path="/marvel" element={ <MovieDetails company={querys[0]} /> } />
           <Route path="/disney" element={ <MovieDetails company={querys[1]}/> } />
           <Route path="/pixar" element={ <MovieDetails company={querys[2]}/> } />
           <Route path="/star-wars" element={ <MovieDetails company={querys[3]}/> } />
           <Route path="/netflix" element={ <MovieDetails company={querys[4]}/> } />
           <Route path="/national-geographic" element={ <MovieDetails company={querys[5]}/> } />
-
           <Route path="movies/:movieId" element={ <DetailsPage />} />
           <Route path="search" element={ <SearchMoviesPage /> } />
         </Routes>  
