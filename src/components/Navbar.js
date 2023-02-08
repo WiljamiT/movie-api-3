@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles/Navbar.css'
+import { Link } from "react-router-dom";
 
 import { MdHome, MdSearch, MdStarRate } from "react-icons/md"
 
@@ -8,13 +9,12 @@ const Navbar = () => {
     <div className="Nav">
       <h2>LOGO</h2>
 
-
-      <a href="/" alt="asd"><span><MdHome />Home</span></a>
-      <a href="/search" alt="asd"><span><MdSearch />Search</span></a>
-      <a href="#asd" alt="asd"><span><MdStarRate />Watchlist</span></a>
+      <Link to={"/"}><span><MdHome />Home</span></Link>
+      <Link to={"/search"}><span><MdSearch />Search</span></Link>
+      <Link to={"/"}><span><MdStarRate />Watchlist</span></Link>
 
       <div className="user-container">
-        <a>Not logged In</a>
+        <Link to={"/"}>Not logged In</Link>
         <img src="https://via.placeholder.com/50" alt="imgOfUser" />
       </div>
       

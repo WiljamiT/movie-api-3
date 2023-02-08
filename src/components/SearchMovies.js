@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { MdArrowBack, MdArrowForward } from "react-icons/md"
 import useApiRequest from "./Fetch";
 import '../components/styles/SearchMovies.css';
+import { Link } from 'react-router-dom';
 
 const SearchMovies = () => {
 
@@ -32,16 +33,11 @@ const SearchMovies = () => {
     const apiKey = process.env.REACT_APP_MOVIE_API_KEY
     
 
-    const { data, error, isLoaded } = useApiRequest(
+    const { data } = useApiRequest(
         `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieName}&page=${page}`
       );
 
-  //     if (error !== null) {
-  //   return <div>Error: {error.message}</div>;
-  // }
-  // if (!isLoaded) {
-  //   return <div>Loading...</div>;
-  // }
+  
     
       const baseUrl = "http://image.tmdb.org/t/p/w500";
       const errorUrl = "https://via.placeholder.com/250";
@@ -63,12 +59,12 @@ const SearchMovies = () => {
         </div>
         {!data.results ? <div className="search-notfound"><h1>🔎</h1><h1>🎬</h1><h1>🍿</h1></div> : <div className="grid-movies-np">
         {data.results.map((item, i) => (
-          <a key={i} className="jee" href={`movies/${item.id}`}> 
+          <Link to={`movies/${item.id}`} key={i} className="jee"> 
             <div className="movie-card-details">
                 <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
                 <h4>{item.original_title}</h4>  
             </div>
-          </a>
+          </Link>
         
       
         ))}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useApiRequest from "./Fetch";
 import "../components/styles/MovieDetails.css";
+import { Link } from "react-router-dom"
 
 import { MdArrowBack, MdArrowForward } from "react-icons/md"
 
@@ -18,7 +19,7 @@ const MovieDetails = ({company}) => {
     const { data, error, isLoaded } = useApiRequest(
         `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${company}&page=${page}`
       );
-      console.log(company)
+      // console.log(company)
     
       if (error !== null) {
         return <div>Error: {error.message}</div>;
@@ -26,7 +27,7 @@ const MovieDetails = ({company}) => {
       if (!isLoaded) {
         return <div>Loading...</div>;
       }
-      console.log("MARVEL", data.results, data.total_pages)
+      // console.log("MARVEL", data.results, data.total_pages)
 
       return (
         <div className="hero">
@@ -37,8 +38,11 @@ const MovieDetails = ({company}) => {
           
           {data.results.map((item, i) => (
             <div className="movie-card-details" key={i}>
-            <a href={`/movies/${item.id}`}><img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} /><h4>{item.original_title}</h4></a>
-        </div>
+              <Link to={`/movies/${item.id}`}>
+                <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
+                  <h4>{item.original_title}</h4>
+              </Link>
+            </div>
           ))}
         </div>
         <div className="pagination">

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import useApiRequest from "./Fetch";
-
-import "../components/styles/DetailsPage.css"
+import { Link } from "react-router-dom";
+import "../components/styles/DetailsPage.css";
 
 const RecommendationRow = () => {
   const { movieId } = useParams();
@@ -22,7 +22,7 @@ const RecommendationRow = () => {
     return <div>Loading...</div>;
   }
   
-  console.log(data)
+  //console.log(data)
 
   return (
     <div className="recoms">
@@ -32,7 +32,7 @@ const RecommendationRow = () => {
         {data.total_pages === 0 ? <p>- No recommendations -</p> : data.results.map((item, i) => (
           <div className="recoms-card" key={i}>
             
-            <a href={`/movies/${item.id}`}><img src={posterUrl + item.poster_path} alt={item.title} /><p>{item.title}</p></a>
+            <Link to={`/movies/${item.id}`}><img src={posterUrl + item.poster_path} alt={item.title} /><p>{item.title}</p></Link>
           </div>
         ))}
         
@@ -66,8 +66,8 @@ const DetailsPage = () => {
     // console.log(data.title)
     // console.log(data)
 
-    console.log(posterUrl + data.backdrop_path);
-    console.log(data)
+    // console.log(posterUrl + data.backdrop_path);
+    // console.log(data)
 
   return (
     <>

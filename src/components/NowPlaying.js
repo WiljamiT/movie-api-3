@@ -3,6 +3,8 @@ import useApiRequest from "./Fetch";
 import { MdArrowBack, MdArrowForward } from "react-icons/md"
 import '../components/styles/NowPlaying.css'
 
+import { Link } from "react-router-dom";
+
 import Collection from '../components/Collection'
 import HeroBanner from '../components/HeroBanner'
 import UpcomingMovies from "./UpcomingMovies";
@@ -25,7 +27,7 @@ const NowPlaying = () => {
     return <div>Loading...</div>;
   }
   
-  console.log(data.results)
+  // console.log(data.results)
 
   return (
     <>
@@ -38,27 +40,23 @@ const NowPlaying = () => {
 
       <div className="grid-movies-np">
         {data.results.map((item, i) => (
-          <a key={i} className="jee" href={`movies/${item.id}`}> 
-          <div className="movie-card-details">
+          <Link key={i} to={`movies/${item.id}`}><div className="movie-card-details">
           <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
           <h4>{item.original_title}</h4>
-            </div>
-          </a>
-
-      
+          </div>
+          </Link>
         ))}
       </div>
-
 
       <div className="pagination">
         <button
             disabled={page === 1}
-            onClick={() => setPage((prevState) => prevState - 1, window.scrollTo({top: 460}))}
+            onClick={() => setPage((prevState) => prevState - 1, window.scrollTo({top: 900}))}
         >
             <MdArrowBack />
         </button>
             <p>{page} / {!data.total_pages ? 1 : data.total_pages}</p>
-            <button disabled={page === data.total_pages || data.total_pages === 1} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 10})) }>
+            <button disabled={page === data.total_pages || data.total_pages === 1} onClick={() => setPage((prevState) => prevState + 1, window.scrollTo({top: 900})) }>
               <MdArrowForward />
             </button>
 

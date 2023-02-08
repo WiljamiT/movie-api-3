@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MdArrowBack, MdArrowForward } from "react-icons/md"
 import useApiRequest from "./Fetch";
+import { Link } from "react-router-dom"
 
 import '../components/styles/NowPlaying.css'
 
@@ -22,7 +23,7 @@ const UpcomingMovies = () => {
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
-  console.log(data.results)
+  // console.log(data.results)
 
   return (
     <>
@@ -33,12 +34,13 @@ const UpcomingMovies = () => {
 
       <div className="grid-movies-np">
         {data.results.map((item, i) => (
-          <a key={i} className="jee" href={`movies/${item.id}`}> 
+          
+          <Link to={`movies/${item.id}`} key={i} className="jee"> 
           <div className="movie-card-details">
           <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
           <h4>{item.original_title}</h4>
             </div>
-          </a>
+          </Link>
 
       
         ))}
