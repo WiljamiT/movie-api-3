@@ -40,7 +40,7 @@ const NowPlaying = () => {
 
       <div className="grid-movies-np">
         {data.results.map((item, i) => (
-          <Link key={i} to={`movies/${item.id}`}><div className="movie-card-details">
+          <Link key={i} to={`/movies/${item.id}`}><div className="movie-card-details">
           <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
           <h4>{item.original_title}</h4>
           </div>

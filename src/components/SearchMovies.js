@@ -59,7 +59,7 @@ const SearchMovies = () => {
         </div>
         {!data.results ? <div className="search-notfound"><h1>🔎</h1><h1>🎬</h1><h1>🍿</h1></div> : <div className="grid-movies-np">
         {data.results.map((item, i) => (
-          <Link to={`movies/${item.id}`} key={i} className="jee"> 
+          <Link to={`/movies/${item.id}`} key={i} className="jee"> 
             <div className="movie-card-details">
                 <img src={item.poster_path ? baseUrl+item.poster_path : errorUrl} alt={item.original_title} />
                 <h4>{item.original_title}</h4>  
